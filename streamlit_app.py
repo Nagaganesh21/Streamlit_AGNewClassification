@@ -6,22 +6,6 @@ from bs4 import BeautifulSoup
 import mngdataclean as mng
 import re
 import numpy as np
-import os
-import spacy
-
-# Specify the full path to the 'en_core_web_sm' model
-model_path = "D:/ML and DL Coading practce/venv/Lib/site-packages/en_core_web_sm"
-
-# Print the contents of the model directory to verify
-print("Contents of the model directory:")
-print(os.listdir(model_path))
-
-# Load the model
-try:
-    nlp = spacy.load(model_path)
-    print("SpaCy model loaded successfully!")
-except Exception as e:
-    print("Error loading SpaCy model:", e)
 
 # Load tokenizer
 tokenizer = pickle.load(open("tokenizer.pkl", "rb"))
