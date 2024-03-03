@@ -1,0 +1,5 @@
+numpy==1.26.2
+keras==2.15.0
+streamlit==1.31.1
+tensorflow==2.15.0
+mngdataclean==0.4.2
