@@ -3,3 +3,11 @@ keras==2.15.0
 streamlit==1.31.1
 tensorflow==2.15.0
 mngdataclean==0.4.2
+nltk==3.8.1
+beautifulsoup4==4.12.2
+spacy==3.7.2
+unicodedata2==15.1.0
+textblob==0.17.1
+setuptools==60.2.0
+scipy==1.11.4
+pycaret==3.3.0
