@@ -9,7 +9,8 @@ import numpy as np
 import spacy
 
 # Load the 'en_core_web_sm' model
-nlp = spacy.load('en_core_web_sm')
+model_path = "D:/ML and DL Coading practce/venv/Lib/site-packages/en_core_web_sm"
+nlp = spacy.load(model_path)
 
 # Load tokenizer
 tokenizer = pickle.load(open("tokenizer.pkl", "rb"))
