@@ -6,11 +6,22 @@ from bs4 import BeautifulSoup
 import mngdataclean as mng
 import re
 import numpy as np
+import os
 import spacy
 
-# Load the 'en_core_web_sm' model
+# Specify the full path to the 'en_core_web_sm' model
 model_path = "D:/ML and DL Coading practce/venv/Lib/site-packages/en_core_web_sm"
-nlp = spacy.load(model_path)
+
+# Print the contents of the model directory to verify
+print("Contents of the model directory:")
+print(os.listdir(model_path))
+
+# Load the model
+try:
+    nlp = spacy.load(model_path)
+    print("SpaCy model loaded successfully!")
+except Exception as e:
+    print("Error loading SpaCy model:", e)
 
 # Load tokenizer
 tokenizer = pickle.load(open("tokenizer.pkl", "rb"))
@@ -18,10 +29,10 @@ tokenizer = pickle.load(open("tokenizer.pkl", "rb"))
 # Load model
 model = load_model('news_classification.h5')
 
-#load max_len
+# Load max_len
 max_len = pickle.load(open("max_len.pkl", "rb"))
 
-#load class_names
+# Load class_names
 class_names = pickle.load(open("class_names.pkl", "rb"))
 
 # Function to predict sentiment
@@ -40,7 +51,6 @@ def main():
     if st.button("Predict"):
         if user_input:
             prediction = predict_sentiment(user_input)
-            #st.write('Predicted probabilities:', prediction)
             predicted_class = np.argmax(prediction)
             predicted_label = class_names[predicted_class]
             st.write('Predicted class:', predicted_label)
